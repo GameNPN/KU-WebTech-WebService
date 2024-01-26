@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <form action="" id="myform">
+        <h2>แบบฟอร์มลงทะเบียน</h2>
+        <div class="frmDiv">
+          <label for="username">Name:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="please input your username ..."
+            required
+          />
+          <small>Error Message</small>
+        </div>
+        <div class="frmDiv">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="please input your email ..."
+            required
+          />
+          <small>Error Message</small>
+        </div>
+        <div class="frmDiv">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="please input your password ..."
+            required
+          />
+          <small>Error Message</small>
+        </div>
+        <div class="frmDiv">
+          <label for="Confirmpsw">Confirm Password:</label>
+          <input
+            type="password"
+            name="Confirmpsw"
+            id="Confirmpsw"
+            placeholder="please input confirm password ..."
+            required
+          />
+          <small>Error Message</small>
+        </div>
+        <button type="submit" class="btn">ลงทะเบียน</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

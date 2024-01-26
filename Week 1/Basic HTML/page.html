@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Form Test</title>
+</head>
+<body>
+    <h1>Example Form by Naphatnan Sillapa ::</h1>
+    <fieldset>
+        <legend><h1>Your Details:</h1></legend>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email">
+
+        </form>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend> <h1>Your Review</h1></legend>
+        <form>
+            <label>How did you hear about us.</label>
+            <select name="website" id="website">
+                <option value="google">Google</option>
+                <option value="friend">Friend</option>
+                <option value="advert">Advert</option>
+                <option value="other">Other</option>
+            </select>
+            <p for="">Would you visit again?</p> 
+            <input type="radio" id="yes" name="yes" value="HTML">
+            <label for="html">Yes</label>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">No</label>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">Maybe</label><br>
+
+            <p for="">Comments</p>
+            <textarea name="comments" id="comments" cols="120" rows="4"></textarea>
+            <br><br><br>
+
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Sign me up for email update</label><br><br>
+
+            <input type="button" onclick="alert(' Yeahh !! You are submit!')" value="Submit review">
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #092635;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  float: left;
+  width: 20%;
+  height: 100vh; /* only for demonstration, should be removed */
+  background: #1b4242;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+img {
+  border-radius: 50%;
+  object-fit: cover;
+  /* border-color: black;
+  border-style: solid;
+  border-width: 5px; */
+}
+hr {
+  width: 100%;
+}
+._maintitle {
+  display: flex;
+  align-self: start;
+  color: white;
+}
+._img {
+  align-self: center;
+}
+._like {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 160px;
+  box-shadow: 2px 2px 30px 5px  #000 ;
+  padding: 20px;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 50px;
+}
+._LikeMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+._liketitle {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white;
+}
+._title {
+  color: #9ec8b9;
+}
+._ulfriend {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  gap: 50px;
+}
+._friendMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+}
+._friendtitle {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white;
+}
+._friend {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 220px;
+  box-shadow: 2px 2px 5px #9ec8b9;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50px;
+}
+._fbbutton {
+  display: flex;
+  flex-direction: row;
+  background-color: #092635;
+  padding: 2px;
+  gap: 5px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+._igbutton {
+  display: flex;
+  flex-direction: row;
+  background-color: #092635;
+  padding: 2px;
+  gap: 5px;
+  width: 105%;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+._linkcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+._igbutton:hover {
+  background-color: #1b4242;
+}
+._fbbutton:hover {
+  background-color: #1b4242;
+}
+/* .Table{
+  background-color: white;
+  display: flex;
+  height: fit-content;
+  box-shadow: 2px 2px 5px #9ec8b9;
+  margin-bottom: 50px;
+} */
+.mondaycard {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 160px;
+  /* box-shadow: 2px 2px 5px #ffffff; */
+  background-color: #ffe382;
+  border-radius: 50px;
+  padding: 30px;
+}
+.tablemain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+}
+.monday {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mondaydetail {
+  display: flex;
+  flex-direction: row;
+  width: 82%;
+  height: 140px;
+  background-color: white;
+  align-self: center;
+  border-radius: 20px;
+ margin-left: 80px;
+ padding: 20px;
+ justify-content: space-between;
+}
+.sec{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.button-typesec-lc{
+    display: flex;
+    background-color: #3081D0;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+.subject{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.aj{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}
+.room-typelern{
+  display: flex;
+  flex-direction: column;
+}
+.room{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}
+.typelern{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}
+.button-typesec-2{
+  display: flex;
+  background-color: #EE7214;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+}
+.tuecard{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 160px;
+  /* box-shadow: 2px 2px 5px #ffffff; */
+  background-color: #FED9ED;
+  border-radius: 50px;
+  padding: 30px;
+}
+.wedcard{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 160px;
+  /* box-shadow: 2px 2px 5px #ffffff; */
+  background-color: #D0F288;
+  border-radius: 50px;
+  padding: 30px;
+}
+.thucard{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 160px;
+  /* box-shadow: 2px 2px 5px #ffffff; */
+  background-color: #F7B787;
+  border-radius: 50px;
+  padding: 30px;
+}
+.fricard{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 160px;
+  /* box-shadow: 2px 2px 5px #ffffff; */
+  background-color: #C5FFF8;
+  border-radius: 50px;
+  padding: 30px;
+}
+.skilltemplate{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  background-color: #fff;
+  width:  340px;
+  padding: 5px;
+  border-radius: 10px;
+  color: black;
+}
+.skilltemplate:hover{
+  background-color: #666;
+  color: white
+}
+.skill{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+
+}
+#container {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  padding-top: 50px;
+}
+#myform {
+  display: flex;
+  flex-direction: column;
+}
+#myform tr, #myform th {
+    border: 1px solid #fff;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #myform th {
+    background-color: #330c3b;
+    color: #fff;
+  }
+  
+  #myform th:nth-child(even) {
+    background-color: #330c3b;
+  }
+  
+  #myform th:nth-child(odd) {
+    background-color: #000;
+  }
+  
+  #myform th {
+    color: #fff;
+  }

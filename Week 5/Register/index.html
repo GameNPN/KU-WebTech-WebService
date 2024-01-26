@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register-Form</title>
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <form action="#" id="myform">
+        <h1>🎄My Register🎄</h1>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required class="name"/>
+        <hr>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <hr>
+      </div>
+      <div>
+        <label for="interests">Interests: </label>
+        <input type="checkbox" name="interests" id="sports" value="sports" />
+        <label for="sports">sports</label>
+        <input type="checkbox" name="interests" id="movie" value="movie" />
+        <label for="movie">Movie</label>
+        <input type="checkbox" name="interests" id="music" value="music" />
+        <label for="music">Music</label>
+        <hr>
+      </div>
+      <div>
+        <label for="country">Country: </label>
+        <select name="country" id="country">
+          <option value="Thailand">Thailand</option>
+          <option value="United States">United States</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Australia">Australia</option>
+        </select>
+      </div>
+      
+      <input type="submit" value="submit" />
+      <div id="result"></div>
+    </form>
+  </body>
+</html>
