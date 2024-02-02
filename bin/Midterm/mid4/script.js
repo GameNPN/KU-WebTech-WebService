@@ -24,58 +24,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultDiv = document.getElementById("result");
   const resultDiv2 = document.getElementById("result2");
 
-  const filterfruit = items.filter((item) => item.category == "Fruit");
-  const filterVegetable = items.filter((item) => item.category == "Vegetable");
-  const filterCucumber = items.filter((item) => item.name == "Cucumber");
-  const fruitprice = filterfruit.map((item) => item.price);
-  const Vegetableprice = filterVegetable.map((item) => item.price);
-  const price = items.map((item) => item.price);
-  let sumprice = price.reduce((prev, curr) => prev + curr, 0);
-  let sumfruitprice = fruitprice.reduce((prev, curr) => prev + curr, 0);
-  let sumVegetprice = Vegetableprice.reduce((prev, curr) => prev + curr, 0);
-  let average = sumVegetprice / filterVegetable.length;
-  const sortByName = filterfruit.slice().sort(function (a, b) {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    return nameA.localeCompare(nameB);
-  });
-  const sortbyprice = items.slice().sort(function (a, b) {
-    return a.price - b.price;
-  });
+  const filterItemsByCategory = (category) => items.filter((item) => item.category === category);
+  const getTotalCost = (items) => items.reduce((total, item) => total + item.price, 0);
+  const getAveragePrice = (items) => getTotalCost(items) / items.length;
 
-  const sortvegetbyprice = filterVegetable.slice().sort(function (a, b) {
-    return b.price - a.price;
-  });
-  const sortfruitbyprice = filterfruit.slice().sort(function (a, b) {
-    return a.price - b.price;
-  });
-
-  const selec_fristlowpricefruit = sortfruitbyprice[0];
-
-  const sortbynamestr = JSON.stringify(sortByName);
-
-  const filtervegetprice = sortvegetbyprice.filter((item) => item.price >= 1)
-
-  // console.log(Vegetableprice);
-  // console.log(sumVegetprice);
-  // console.log(average);
-  console.log(sortvegetbyprice);
-  console.log(filtervegetprice);
+  const filterFruit = filterItemsByCategory("Fruit");
+  const filterVegetable = filterItemsByCategory("Vegetable");
+  const filterCucumber = items.filter((item) => item.name === "Cucumber");
+  const sortByName = filterFruit.slice().sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+  const sortbyprice = items.slice().sort((a, b) => a.price - b.price);
+  const sortVegetByPrice = filterVegetable.slice().sort((a, b) => b.price - a.price);
+  const sortFruitByPrice = filterFruit.slice().sort((a, b) => a.price - b.price);
+  const selecFirstLowPriceFruit = sortFruitByPrice[0];
+  const filterVegetPriceOver1 = sortVegetByPrice.filter((item) => item.price >= 1);
 
   resultDiv.innerHTML = `
-  <p>Name : ${items.map((item) => item.name).join(", ")} </p>
-  <p>Fruit : ${filterfruit.map((item) => item.name).join(", ")} </p>
-  <p>Total Cost : $ ${sumprice.toFixed(1)} </p>
-  <p>Sorted by Price : ${sortbyprice.map((item) => item.name).join(", ")} </p>
-  <p>Cucumber Details : ${JSON.stringify(filterCucumber)} </p>
-
+    <p>Name : ${items.map((item) => item.name).join(", ")} </p>
+    <p>Fruit : ${filterFruit.map((item) => item.name).join(", ")} </p>
+    <p>Total Cost : $ ${getTotalCost(items).toFixed(1)} </p>
+    <p>Sorted by Price : ${sortbyprice.map((item) => item.name).join(", ")} </p>
+    <p>Cucumber Details : ${JSON.stringify(filterCucumber)} </p>
   `;
 
   resultDiv2.innerHTML = `
-  <p>Fruit Total Cost : $ ${sumfruitprice.toFixed(1)} </p>
-  <p>Fruit Min Price : ${JSON.stringify(selec_fristlowpricefruit)}</p>
-  <p>Sorted by Name : ${sortbynamestr} </p>
-  <p>Average : ${average.toFixed(1)} </p>
-  <p>Price of Vegetable > $1 : ${JSON.stringify(filtervegetprice)} </p>
+    <p>Fruit Total Cost : $ ${getTotalCost(filterFruit).toFixed(1)} </p>
+    <p>Fruit Min Price : ${JSON.stringify(selecFirstLowPriceFruit)}</p>
+    <p>Sorted by Name : ${JSON.stringify(sortByName.map((item) => `${item.name}, $${item.price}`).join(", "))} </p>
+    <p>Average : $ ${getAveragePrice(filterVegetable).toFixed(1)} </p>
+    <p>Price of Vegetable > $1 : ${JSON.stringify(filterVegetPriceOver1)} </p>
   `;
 });
