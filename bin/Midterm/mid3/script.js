@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // add event to call functon
     btn.addEventListener("click", () => {
       if (!btn.disabled) {
-        // Check if button is not disabled
         point += 1;
         show_point.innerHTML = point;
         const isCorrect = checkWord(alphabet[i]);
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (point == max_point) {
           document.getElementById("message").innerHTML =
-            "Game over! The word was " + word_rand;
+            "Game over! you so stupid 🐃!! The word was " + word_rand;
           document.getElementById("playAgain").style.display = "block";
           disableAllButton();
         }
@@ -134,22 +133,22 @@ document.addEventListener("DOMContentLoaded", () => {
       checkWin();
 
       word_show.innerHTML = answer;
-      return true; // Return true if the guess is correct
+      return true;
     } else {
       console.log("false");
-      return false; // Return false if the guess is incorrect
+      return false;
     }
   }
 
   function checkWin() {
     if (point == max_point) {
       document.getElementById("message").innerHTML =
-        "Game over! The word was " + word_rand;
+        "Game over! you so stupid !! The word was " + word_rand;
       document.getElementById("playAgain").style.display = "block";
       disableAllButton();
     } else if (answer == word_rand) {
       document.getElementById("message").innerHTML =
-        "Congratulations! You Win!";
+        "Congratulations! You Win code keng mak mak 😘!";
       document.getElementById("playAgain").style.display = "block";
     }
   }
