@@ -18,8 +18,8 @@ body {
 }
 .container {
     display: flex;
-    font-size: 2rem;
-    
+    flex-flow: column;
+    align-items: center;
 }
 .countries {
     display: flex;
@@ -54,4 +54,12 @@ body {
     margin-bottom: 2.5rem;
     text-transform: uppercase;
     color: #888;
+}
+.country_row:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.country_row span {
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: 2.4rem;
 }
