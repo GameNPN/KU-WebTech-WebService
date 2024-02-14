@@ -1,13 +1,17 @@
 const countries = document.querySelector(".countries");
 let dataname = []; // Declare dataname with let
 let sortedNames = []; // Declare sortedNames array
+let commonbyregion = [];
+let region = [];
 
 const req = new XMLHttpRequest();
 req.open("GET", `https://restcountries.com/v3.1/all`);
 req.onload = function () {
   const data = JSON.parse(req.responseText);
-  sortedNames = data.map(country => country.name.common).sort(); // Sort country names
+  sortedNames = data.map((country) => country.name.common).sort();
   dataname = sortedNames.slice(); // Copy sorted names to dataname
+  region = data.map((region) => region.region);
+  console.log(region);
   for (let i = 0; i < sortedNames.length; i++) {
     getCountry(sortedNames[i]); // Use sortedNames instead of dataname
   }
@@ -47,6 +51,18 @@ const getCountry = function (country) {
   });
 };
 
+const getRegion = function (region) {
+  const req = new XMLHttpRequest();
+  req.open("GET", `https://restcountries.com/v3.1/region/${region}`);
+  req.send();
+  req.addEventListener("load", function () {
+    const data = JSON.parse(this.responseText);
+    for (let country of data) {
+      console.log(country.name.common);
+      getCountry(country.name.common);
+    }
+  });
+};
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
   const query = document.getElementById("query").value.trim();
@@ -55,57 +71,39 @@ document.getElementById("form").addEventListener("submit", function (event) {
     countries.innerHTML = "";
     let found = false;
 
-    for (let i = 0; i < sortedNames.length; i++) { // Change loop limit
+    for (let i = 0; i < sortedNames.length; i++) {
+      // Change loop limit
       if (query.toLowerCase() == sortedNames[i].toLowerCase()) {
         found = true;
         console.log(found);
         getCountry(sortedNames[i]);
-        countries.style.display = 'flex';
+        countries.style.display = "flex";
         break;
       }
     }
-    
+
+    for (let i = 0; i < region.length; i++) {
+      // Change loop limit
+      if (query.toLowerCase() == region[i].toLowerCase()) {
+        found = true;
+        console.log(found);
+        getRegion(region[i]);
+        countries.style.display = "grid";
+        break;
+      }
+    }
+
     if (!found) {
-      const text = `<p>${query} Not found!</p>` ;
-      countries.style.display = 'flex';
+      const text = `<p>${query} Not found!</p>`;
+      countries.style.display = "flex";
       countries.insertAdjacentHTML("beforeend", text);
     }
   } else {
     countries.innerHTML = "";
-    for (let i = 0; i < sortedNames.length; i++) { // Change loop limit
-        getCountry(sortedNames[i]);
-        countries.style.display = 'grid';
-      }
+    for (let i = 0; i < sortedNames.length; i++) {
+      // Change loop limit
+      getCountry(sortedNames[i]);
+      countries.style.display = "grid";
+    }
   }
 });
-
-
-
-  //   if (!found) {
-  //     searchcountries.innerHTML = "Not Found"; // แสดงข้อความ Not Found เมื่อไม่พบชื่อประเทศที่ตรงกับคำค้นหา
-  //   }
-  // } else {
-  //   searchcountries.innerHTML = ""; // เมื่อไม่มีการค้นหา ให้ล้างค่า searchcountries และแสดงข้อมูลประเทศทั้งหมด
-  //   for (let i = 0; i < dataname.length; i++) {
-  //     getCountry(dataname[i]);
-  //   }
-  // }
-
-//   if (query !== "") {
-//     countries.innerHTML = "";
-//     if(query.textContent == dataname){
-// console.log(query);
-//     }
-//     if (result.length === 0) {
-//       countries.innerHTML = "Not Found";
-//     } else {
-//       for (let i = 0; i < result.length; i++) {
-//         getCountry(result[i]);
-//       }
-//     }
-//   } else {
-//     countries.innerHTML = "";
-//     for (let i = 0; i < data.length; i++) {
-//       getCountry(data[i]);
-//     }
-//   }
