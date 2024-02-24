@@ -28,7 +28,7 @@ const Menu = [
 document.addEventListener("DOMContentLoaded", () => {
   // localStorage.clear()
   const ClearBtn = document.querySelector('.menu-btn2');
-  const manulist = document.querySelector(".manulist");
+  const manulist = document.querySelector(".menulist");
   const totalPriceContainer = document.querySelector(".total-price");
   for (let i = 0; i < Menu.length; i++) {
     getManu(i);

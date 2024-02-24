@@ -22,19 +22,19 @@ body {
 .name {
   font-size: 5rem;
 }
-.manulist {
+.menulist {
   display: grid;
   /* flex-direction: column; */
   gap: 5rem;
 }
 @media (min-width: 600px) {
-  .manulist {
+  .menulist {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1100px) {
-  .manulist {
+  .menulist {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -93,7 +93,6 @@ body {
   padding: 10px;
 }
 .receipt {
-  border: 1px solid #ccc;
   padding: 15px;
   margin-top: 20px;
 }
@@ -147,13 +146,6 @@ body {
     font-size: 24px;
   }
 }
-/* .receiptHead{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-content: center;
-  justify-content: center;
-} */
 .receiptHead {
   display: flex;
   justify-content: space-between;
