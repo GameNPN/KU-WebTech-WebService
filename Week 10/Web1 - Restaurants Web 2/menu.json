@@ -1,0 +1,32 @@
+[
+  {
+    "imgSrc": "img/pic1.jpg",
+    "name": "Dish Name1",
+    "price": "$12.00"
+  },
+  {
+    "imgSrc": "img/pic2.jpg",
+    "name": "Dish Name2",
+    "price": "$12.00"
+  },
+  {
+    "imgSrc": "img/pic3.jpg",
+    "name": "Dish Name3",
+    "price": "$12.00"
+  },
+  {
+    "imgSrc": "img/pic4.jpg",
+    "name": "Dish Name4",
+    "price": "$12.00"
+  },
+  {
+    "imgSrc": "img/pic5.jpg",
+    "name": "Dish Name5",
+    "price": "$12.00"
+  },
+  {
+    "imgSrc": "img/pic6.jpg",
+    "name": "Dish Name6",
+    "price": "$12.00"
+  }
+]
