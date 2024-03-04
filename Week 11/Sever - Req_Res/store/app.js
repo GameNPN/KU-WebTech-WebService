@@ -1,10 +1,13 @@
-const http = require("http");
 const express = require("express");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 
-// middleware
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
 const app = express();
-// const server = http.createServer(app);
-// server.listen(3000);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(3000);
+app.use('/admin',adminRoutes); // Using adminRoutes for paths starting with '/admin'
+app.use(shopRoutes); // Using shopRoutes for paths starting with '/'
+
+app.listen(3000)
