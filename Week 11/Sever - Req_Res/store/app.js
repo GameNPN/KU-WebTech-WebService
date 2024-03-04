@@ -1,19 +1,10 @@
-const http = require('http');
-const express = require('express');
+const http = require("http");
+const express = require("express");
+const bodyparser = require("body-parser");
 
 // middleware
 const app = express();
+// const server = http.createServer(app);
+// server.listen(3000);
 
-app.use((req, res, next) => {
-    console.log('Say Hi from middleware');
-    next();
-});
-
-app.use((req, res, next) => {
-    console.log('Say Fi from another middleware');
-    res.send('<h1>This is Wifi</h1>');
-});
-
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000);
