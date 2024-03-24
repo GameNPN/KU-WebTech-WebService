@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Seat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1 class="title">Book Your Seat</h1>
+    <section class="container">
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+        required
+      /><br />
+      <input type="date" id="date" placeholder="Enter date" required/><br />
+      <input type="time" id="time" placeholder="Enter time" required/><br />
+      <input
+        type="number"
+        id="countSeat"
+        placeholder="Enter count booking seat"
+        required
+      /><br />
+      <button onclick="saveData()" id="btn">Book Now</button>
+    </section>
+    <br />
+    <h1 class="title">Current Booking</h1>
+    <section class="container">
+      <div id="data"></div>
+    </section>
+  </body>
+</html>
